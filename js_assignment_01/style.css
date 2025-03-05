@@ -1,0 +1,233 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(100deg, #ff9aff, #c4e5fa);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.dice_game {
+    background-color: #ffffff;
+    padding: 80px;
+    box-shadow: 0 10px 30px rgba(0, 0.5, 0.1, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+}
+
+h1 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.players {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.player {
+    width: 45%;
+    padding: 20px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #b0edf9, #d4e3eb);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.active {
+    background: linear-gradient(135deg, #dba0fd, #f2c2f7);
+    transform: scale(1.05);
+}
+
+.dice {
+    width: 120px;
+    margin: 30px auto;
+    animation: bounce 1s infinite;
+}
+
+
+/* to add bounce effect on dice */
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+button {
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0.1, 0, 0.2);
+}
+
+.rolling_dice {
+    background: #8f59ac;
+    color: #fff;
+}
+
+.save_score {
+    background: #c67ef7;
+    color: #fff;
+}
+
+.reset_score {
+    background: #9f7ed4;
+    color: #fff;
+}
+
+.winner_announcement {
+    font-size: 32px;
+    color: #fff;
+    background-color: #2ec7d5;
+    padding: 20px;
+    margin-top: 5px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    animation: popUp 0.5s ease-in-out;
+}
+
+
+/*to add popup effect while inner winner announcement*/
+
+@keyframes popUp {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/*display rules of the game */
+
+.rules_button {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    padding: 10px 15px;
+    background-color: #8ceded;
+    color: rgb(3, 0, 0);
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.rules_button:hover {
+    background-color: #8ef0f4;
+}
+
+.rules_popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.rules_content {
+    background: #e5f8fc;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/*  For tablets (max-width: 768px) */
+
+@media (max-width: 768px) {
+    .dice_game {
+        padding: 50px;
+        max-width: 90%;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .players {
+        flex-direction: column;
+        align-items: center;
+    }
+    .player {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .dice {
+        width: 100px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    .winner_announcement {
+        font-size: 28px;
+    }
+    .rules_button {
+        top: 10px;
+        right: 10px;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+
+/* For mobile devices (max-width: 480px) */
+
+@media (max-width: 480px) {
+    .dice_game {
+        padding: 30px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    .dice {
+        width: 80px;
+    }
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+        margin: 5px;
+    }
+    .winner_announcement {
+        font-size: 24px;
+        padding: 15px;
+    }
+    .rules_button {
+        top: 8px;
+        left: 8px;
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Trouble Dice</title>
+
+    <!--intergrating css file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="dice_game">
+        <h1>🎲 Double Trouble Dice 🎲</h1>
+        <div class="players">
+
+            <!-- player 1 block -->
+            <div class="player active" id="player1">
+                <input type="text" id="name1" value="Player 1">
+                <p>Saved Score: <span id="saved1">0</span></p>
+                <p>Current Score: <span id="current1">0</span></p>
+            </div>
+
+            <!-- player 2 block -->
+            <div class="player" id="player2">
+                <input type="text" id="name2" value="Player 2">
+                <p>Saved Score: <span id="saved2">0</span></p>
+                <p>Current Score: <span id="current2">0</span></p>
+            </div>
+        </div>
+
+        <!-- containing images of dice for 1-6 -->
+        <img src="dice1.png" alt="Dice" class="dice" id="dice">
+
+        <!--buttons to roll dice,saving score , reset game,rules -->
+        <div>
+            <button class="rolling_dice" onclick="rollDice()">Roll Dice</button>
+            <button class="save_score" onclick="saveScore()">Save Score</button>
+            <button class="reset_score" onclick="resetGame()">Reset Game</button>
+            <button class="rules_button" onclick="showRules()"><b>Rules</b></button>
+
+        </div>
+        <div class="winner_announcement" id="winner"></div>
+        <div class="rules_popup" id="rulesPopup">
+            <div class="rules_content">
+                <h2>Game Rules</h2>
+                <p>🎲 Roll the dice and increase your score.<br> 🎲 Rolling a 1 resets your current score to 0 and switches the turn.<br> 🎲 Click "Save Score" to add your current score to the saved score.
+                    <br>🎲 First to reach 100 saved points wins!</p>
+                <button onclick="closeRules()">Close</button>
+            </div>
+        </div>
+
+    </div>
+    <!--intergrating js file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
