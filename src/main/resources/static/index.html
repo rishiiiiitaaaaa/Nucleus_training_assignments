@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR portal </title>
+    <!-- integrating css file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- login page content -->
+    <div id="loginPage" class="login-container">
+        <h2>HR Login </h2>
+        <input type="text" id="username" placeholder="Enter Username">
+        <input type="password" id="password" placeholder="Enter Password">
+        <button id="loginBtn">Login</button>
+        <p id="loginMessage"></p>
+    </div>
+    <!-- employee managemanet page content -->
+    <div id="managementPage" style="display: none;">
+        <h1>Employee Management System</h1>
+        <form id="employeeForm">
+            <input type="text" id="empName" placeholder="Name" required>
+            <input type="text" id="empDepartment" placeholder="Department">
+            <input type="email" id="empEmail" placeholder="Email" required>
+            <input type="number" id="empSalary" placeholder="Salary" required>
+            <button type="submit">Add Employee</button>
+        </form>
+        <!-- table to view all employees data and perform reuired operations  -->
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Email</th>
+                    <th>Salary</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTable"></tbody>
+        </table>
+        <!-- logout button for moving back to loginPage -->
+        <button id="logoutBtn">Logout</button>
+    </div>
+    <!-- integrating js file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
